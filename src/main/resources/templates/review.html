@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <title>Tech Product Reviews</title>
+    <link rel="stylesheet" type="text/css"
+          href="/css/style.css"/>
+</head>
+
+<body>
+<div class="reviews-header">
+    <main id="review-info">
+        <h1 th:text="${reviewModel.itemName}"></h1>
+        <img class="review-img" th:src="${reviewModel.link}">
+        <p>Category:<span th:text = "${reviewModel.category}"></span></p>
+        <p>Description:<span th:text = "${reviewModel.description}"></span></p>
+        <p>Review:<span class = "review-each" th:text = "${reviewModel.review}">Review</span></p>
+    </main>
+    <nav>
+        <a class = "btn" th:href="@{/}">Home</a>
+        <a class = "btn" th:href="@{/reviews}">Back</a>
+    </nav>
+</div>
+<footer>
+    <small>&copy; wcci 2022</small>
+</footer>
+</body>
+</html>

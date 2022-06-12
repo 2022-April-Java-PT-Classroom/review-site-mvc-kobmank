@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+    <title> Tech Product Reviews</title>
+
+</head>
+<body>
+   <div class="reviews-header">
+       <main class="reviews">
+           <h1>List of All Reviews</h1>
+           <section class="reviewsList" th:each="review: ${reviewsModel}" >
+
+               <a th:href="@{'/reviews?id=' + ${review.id}}"><p id="itemName" th:text="${review.itemName}"></p></a>
+               <img class="review-img" th:src="${review.link}"/>
+
+           </section>
+       </main>
+       <nav>
+           <a  class="btn" th:href="@{/}">Home</a>
+       </nav>
+   </div>
+</body>
+</html>
